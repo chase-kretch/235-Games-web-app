@@ -1,0 +1,25 @@
+{% extends "layout.html" %}
+
+{% block content %}
+<div id="profile">
+    <h1>Hello {{ username }}</h1>
+    <p>This page shows you all the games in your wishlist! You can click the image to go to the decription page of the game you chose.</p>
+    {% if num_of_favgames > 0 %}
+        <p>It looks like you have {{ num_of_favgames }} games in your wishlist! Thank you for using our service!</p>
+        <br>
+        <br>
+        <hr class="long_line">
+        <h2>Games in Your Wishlist:</h2>
+        {% for game in wishlist %}
+            <div id="gamelist">
+                <a href="{{ url_for('description_bp.description', game_id=game.game_id) }}">
+                    <img src="{{ game.image_url }}" alt="{{ game.title }} image">
+                </a>
+                <div id="gametitle">{{ game.title }}</div>
+            </div>
+        {% endfor %}
+    {% else %}
+        <p>It looks like you don't have any games in your wishlist yet! You can find "Add to Wishlist" button in the description page of any games!</p>
+    {% endif %}
+</div>
+{% endblock %}

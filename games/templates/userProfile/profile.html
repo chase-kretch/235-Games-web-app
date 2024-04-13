@@ -1,0 +1,59 @@
+{% extends "layout.html" %}
+
+{% block content %}
+
+<div id="profile">
+    <h1>Hello {{ username }}</h1>
+    <p>Welcome to your profile page! Below, you'll find a links to your activities, security, and data related pages!
+        Dive in and let's continue your gaming adventure together!</p>
+
+    <div class="boxes">
+        <h2>Your Activities:</h2>
+        <button class="profile_button" onclick="location.href='{{ url_for('profile_bp.reviews') }}'"><div>Reviews</div></button>
+        <button class="profile_button" onclick="location.href='{{ url_for('wishlist_bp.wishlist') }}'"><div>Wishlists</div></button>
+    </div>
+
+    <div class="boxes">
+        <h2>Security:</h2>
+        <button class="profile_button" onclick="location.href='{{ url_for('profile_bp.change_password') }}'"><div>Change a password</div></button>
+    </div>
+
+    <div class="boxes">
+        <h2>Data:</h2>
+        <button class="profile_button_del" onclick="location.href='{{ url_for('profile_bp.delete_account', confirm=False) }}'"><div>Delete the account</div></button>
+    </div>
+</div>
+
+
+    <!--
+    {% if num_of_reviews > 0 %}
+        <br>
+        <br>
+        <hr class="long_line">
+        <h2>Your Reviews:</h2>
+        {% for review in reviews %}
+            <hr>
+            <h4>Game Title: <a href="{{ url_for('description_bp.description', game_id=review.game.game_id) }}">{{ review.game.title }}</a></h4>
+            {% set emoji = "\U00002B50" %}
+            <p>Rating: {{ review.rating * emoji }}</p>
+            <p>Comment: {{ review.comment }}</p>
+
+        {% endfor %}
+    {% endif %}
+
+    {% if num_of_favgames > 0 %}
+        <br>
+        <br>
+        <hr class="long_line">
+        <h2>Games in Your Wishlist:</h2>
+        {% for game in wishlist %}
+            <div id="gamelist">
+                <a href="{{ url_for('description_bp.description', game_id=game.game_id) }}">
+                    <img src="{{ game.url }}" alt="{{ game.title }} image">
+                </a>
+                <div id="gametitle">{{ game.title }}</div>
+            </div>
+        {% endfor %}
+    {% endif %}
+-->
+{% endblock %}

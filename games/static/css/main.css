@@ -1,0 +1,572 @@
+body, html {
+    max-width: 100%;
+    overflow-x: hidden; /* prevent horizontal scrolling for the entire page */
+}
+
+#header {
+    background: 	#CB99C7;
+    border-bottom: 3px solid black;
+    font-size: 25px;
+    font-weight: bold;
+    text-align: center;
+    font-family: monospace;
+    margin-left: 13.2%;
+    position: relative;
+    padding-bottom: 30px;
+}
+#header h1, .h1 {
+    margin-top: 0;
+    margin-bottom: 0;
+    padding-top: 1%;
+}
+#header h3, .h3 {
+    margin-top: 0;
+}
+
+.copyright {
+    color: black;
+    font-size: 0.9em;
+}
+#home {
+    text-align: center;
+    font-size: 18px;
+    padding: 20px;
+    position: absolute;
+    left: 13%;
+    right: 2%;
+}
+#auth {
+    text-align: center;
+    font-size: 18px;
+    padding: 20px;
+    position: absolute;
+    left: 13%;
+    right: 2%;
+}
+#games {
+    text-align: center;
+    font-size: 16px;
+    margin-left: 10%;
+    padding: 20px;
+
+}
+#gamelist {
+    text-align: left;
+    margin-left: 5%;
+    display: flex;
+    align-items: top;
+}
+#gamelist a:hover {
+    transition-duration: 0.7s;
+    display: block;
+    padding: 1%
+
+}
+#gamelist a {
+   transition-duration: 0.7s;
+}
+#gametitle {
+    font-weight: bold;
+    font-size: 30px;
+    position: relative;
+    padding-left: 30px;
+    margin-bottom: 5px;
+    flex: 1;
+    color: darkslateblue;
+}
+
+#padding {
+    padding-bottom: 30px;
+}
+#desc {
+    font-size: 17px;
+    margin-left: 15%;
+    margin-right: 2%;
+    padding: 15px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+#desc h1{
+    padding-right: 500px;
+}
+
+#desc p i{
+    font-style: normal;
+    font-weight: bold;
+    font-size: 17px;
+    text-transform: uppercase;
+    color: darkslateblue
+}
+
+#desc img{
+    margin: 20px;
+    padding: 10px;
+    position: absolute;
+    top: 5px;
+    right: 5px;
+}
+
+#deschead {
+    color:darkslateblue
+}
+
+.description p i {
+    font-family: 'monospace';
+    font-weight: bold;
+    font-size: 18px;
+    text-transform: uppercase;
+    color:darkslateblue
+
+}
+
+.description img {
+    vertical-align: top;
+}
+
+#list {
+    font-family: monospace;
+}
+
+body {
+    background-color: #EFBBCD;
+    font-family: monospace;
+    font-size: 15px;
+    margin: 0;
+    padding: 0;
+}
+
+
+
+
+#main {
+    text-align: center;
+    font-size: 16px;
+    margin-left: 10%;
+    padding: 20px;
+
+}
+
+#nav {
+    height: 100%;
+    width: 13%;
+    position: fixed;
+    text-align: center;
+    background-color: #CB99C7;
+    margin-top: 0;
+    padding-top: 0;
+    border-right: 3px solid black;
+    font-size: 15px;
+    overflow-y: scroll;
+    color: rebeccapurple;
+}
+#nav ::webkit-scrollbar {
+    width: 10px;
+
+}
+
+#nav a {
+    display: block;
+    padding: 5%
+}
+
+#nav a:hover {
+    background-color:#B195D2;
+    border-radius: 50px;
+}
+#nav a:active {
+    background-color:c;
+
+}
+
+#nav h4 {
+    color: rebeccapurple;
+}
+
+#footer {
+    font-weight: bold;
+    font-size: 15px;
+	bottom: 0;
+	margin-left: 5.5%;
+	text-align: center;
+}
+#game_table {
+    margin-left: auto;
+    margin-right: auto;
+    border-collapse: collapse;
+}
+#game_table td, th {
+    text-align: left;
+    padding: 8px;
+}
+#game_table tr:nth-child(even) {
+    background-color: #d9a9ba;
+}
+
+#content {
+
+    margin-left: 13%;
+    margin-right: 5%;
+}
+
+#search {
+    margin-left: 10%;
+    margin-bottom: 5px;
+    background-color: #B195D2;
+    width: 1000px;
+    height: 44px;
+    border-radius: 7px;
+    display: flex;
+    align-items: center;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
+
+#search form {
+    display: flex;
+    align-items: center;
+    width: 100%;
+}
+
+#search button {
+    color: rebeccapurple;
+    background-color: #B195D2;
+    border-radius: 7px;
+    padding: 6px 10px;
+    margin: 3px;
+}
+
+#search select {
+    color: rebeccapurple;
+    background-color: #B195D2;
+    border-radius: 7px;
+    padding: 6px 10px;
+    margin: 3px;
+}
+
+#search input {
+    all: unset;
+    font: 16px system-ui;
+    color: rebeccapurple;
+    height: 100%;
+    width: 100%;
+    padding: 5.2px 10px;
+    text-align: left;
+    border: 1px solid grey;
+    border-radius: 7px;
+    margin-left: 5px;
+    margin-right: 5px;
+}
+
+::placeholder {
+    color: rebeccapurple;
+    opacity: 0.7;
+}
+
+.btn-general {
+    color: rebeccapurple;
+    border-radius: 7px;
+    background-color: #B195D2;
+}
+#gameDesc {
+    background-color: yellow;
+}
+::-webkit-scrollbar {
+    width: 0px;
+    border-radius: 8px;
+}
+::-webkit-scrollbar-track {
+    border-radius: 8px;
+    background-color: #e7e7e7;
+    border: 1px solid #cacaca;
+    background-clip: content-box;
+}
+::-webkit-scrollbar-thumb {
+    border-radius: 8px;
+    border: 3px solid transparent;
+    background-clip: content-box;
+    background-color: rebeccapurple;
+}
+
+.game-item {
+    display: inline-block;
+    width: 200px;
+    text-align: center;
+    margin-right: 10px;
+    vertical-align: top;
+}
+
+.game-item img {
+    width: 100%;
+    height: auto;
+    border-radius: 7px;
+    border: 3px solid transparent;
+    transition: border-color 0.3s ease;
+}
+.game-item img:hover {
+    border-color: white;
+
+}
+
+.game-item h3 {
+    margin: 10px 0;
+    font-size: 16px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+
+.game-item p {
+    font-size: 14px;
+    color: rebeccapurple;
+}
+.category {
+    margin-bottom: 20px;
+}
+
+.game-list {
+    display: flex;
+    overflow-x: auto;
+    white-space: nowrap;
+    width: 100%;
+    padding: 10px 0;
+}
+
+.game-list > * {
+    flex: 0 0 auto;
+}
+#authentication {
+    font-size: 17px;
+    margin-left: 15%;
+    margin-right: 2%;
+    padding: 15px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+#authenhead {
+    margin-left: 3%;
+   color:darkslateblue
+
+
+}
+#authentication p i {
+    font-style: normal;
+    font-weight: bold;
+    font-size: 17px;
+    text-transform: uppercase;
+    color: darkslateblue
+}
+#auth {
+    color:darkslateblue;
+    font-size: 20px;
+    position: absolute;
+}
+.field {
+    border-radius: 10px;
+
+}
+.formlabel {
+    margin-right: 22.7%;
+    padding-bottom: 3px;
+    padding-top: 3px;
+}
+.formfield {
+    padding-bottom: 5px;
+}
+
+
+.field .formfield input[type="text"],
+.field .formfield input[type="password"] {
+  margin-left: 3%;
+  width: 30%;
+  padding: 10px;
+  border: 1px solid darkslateblue;
+  border-radius: 10px;
+  font-size: 14px;
+  margin-bottom: 10px;
+}
+.field .formfield input[type="text"]:focus,
+.field .formfield input[type="password"]:focus {
+  background-color: #DCDCDC;
+  transition: 0.5s;
+  border-color: darkslateblue
+}
+
+.submit input {
+
+  font-size: 18px;
+  color: darkslateblue;
+  border-color: darkslateblue
+  position: absolute; left: 740px; top: 400px;
+  border-radius: 10px;
+  width: 200px;
+  height: 50px;
+  cursor: pointer;
+  outline: none;
+  background-color: #CB99C7;
+  transition: transform 0.3s ease;
+
+
+
+}
+.submit input:hover {
+  transform: scale(1.1);
+}
+
+#review {
+    margin-left: 15%;
+    margin-top: 4%;
+
+
+}
+
+#profile {
+    margin-left: 16%;
+}
+
+.wishlist-btn {
+    color: rebeccapurple;
+    border-radius: 7px;
+    background-color: #B195D2;
+    padding-right: 10px;
+    height: 30px;
+    width: 200px;
+    position: relative; left; bottom:10px;
+    transition: transform 0.3s ease;
+}
+.wishlist-btn:hover {
+    transform: scale(1.05);
+
+}
+#review-btn {
+    color: rebeccapurple;
+    border-radius: 7px;
+    background-color: #B195D2;
+    position: relative; left:250px; bottom: 41px;
+    height: 30px;
+    width: 200px;
+    transition: transform 0.3s ease;
+}
+#review-btn:hover {
+   transform: scale(1.05);
+
+}
+#review-form {
+    margin-right: 100%;
+
+}
+.textarea {
+    font-size: 18px;
+}
+
+#review-submit input {
+    color: rebeccapurple;
+    border-radius: 7px;
+    background-color: #B195D2;
+    height: 30px;
+    width: 200px;
+    transition: transform 0.3s ease;
+
+}
+
+#review-submit input:hover {
+   transform: scale(1.05);
+
+}
+hr {
+  border: 1px solid #ccc; /* Border color and thickness */
+  margin: 20px 0; /* Margin to adjust spacing */
+  width: 30%;
+  border-color: rebeccapurple;
+}
+
+.long_line {
+  border: 2px solid #ccc; /* Border color and thickness */
+  margin: 20px 0; /* Margin to adjust spacing */
+  width: 97%;
+  border-color: rebeccapurple;
+}
+
+.boxes {
+    border: 2px solid rebeccapurple;
+    box-shadow: 9px 6px 4px #5B2C6F;
+    width: 95%;
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+
+.boxes h2 {
+    padding-left: 20px;
+}
+
+.profile_button {
+    background: none;
+    border: none;
+    color: none;
+    margin: 0;
+    padding: 0;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    box-sizing: border-box;
+    display: block;
+    width: 100%;
+    transition-duration: 0.4s;
+    cursor: pointer;
+    font-size: 20px;
+}
+
+.profile_button:hover {
+    background: #B195D2;
+    border: none;
+    margin: 0;
+    padding: 0;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    box-sizing: border-box;
+    display: block;
+    width: 100%;
+}
+
+.profile_button_del {
+    background: none;
+    border: none;
+    color: none;
+    margin: 0;
+    padding: 0;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    box-sizing: border-box;
+    display: block;
+    width: 100%;
+    transition-duration: 2s;
+    cursor: pointer;
+    font-size: 20px;
+}
+
+.profile_button_del:hover {
+    background: #FF6961;
+    border: none;
+    margin: 0;
+    padding: 0;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    box-sizing: border-box;
+    display: block;
+    width: 100%;
+}
+
+#delete_page {
+    text-align: center;
+}
+
+#delete_button {
+    color: black;
+    border-radius: 7px;
+    background-color: #FF6961;
+}

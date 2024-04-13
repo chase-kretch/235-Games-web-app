@@ -1,0 +1,39 @@
+{% extends "layout.html" %}
+{% block content %}
+<div id="games">
+    <h2>Search Results</h2>
+    <h2>Number of Games: {{num_games}}</h2>
+
+    {% if genre != "None" and genre != "all" and criteria != "None" and criteria != "all" %}
+        <p>Showing results for "{{ query }}" based on {{ criteria }} in the genre "{{ genre }}".</p>
+    {% elif (genre == "None" or genre == "all") and criteria != "None" and criteria != "all" %}
+        <p>Showing results for "{{ query }}" based on {{ criteria }}".</p>
+    {% elif genre != "None" and genre != "all" and (criteria == "None" or criteria == "all") %}
+        <p>Showing results for "{{ query }}" in the genre "{{ genre }}"".</p>
+    {% else %}
+        <p>Showing results for "{{ query }}".</p>
+    {% endif %}
+
+
+
+    <div id="padding"></div>
+
+    {% if games %}
+        {% include 'navigation_buttons.html' %}
+        <div id="padding"></div>
+        {% for game in games %}
+        <div id="gamelist">
+
+            <a href="{{ url_for('description_bp.description', game_id=game.game_id) }}"><img src="{{game.game_img}}" alt="{{game.title}} image"></a>
+            <div id="gametitle">{{game.title}}</div>
+        </div>
+        {% endfor %}
+        <div id="padding"></div>
+        {% include 'navigation_buttons.html' %}
+    {% else %}
+        <p>No games found matching your search criteria.</p>
+    {% endif %}
+</div>
+
+
+{% endblock %}

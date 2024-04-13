@@ -1,0 +1,38 @@
+{% extends "layout.html" %}
+{% block content %}
+<div id="desc">
+  <main>
+      <img src="{{ game.url }}" alt="game image">
+    <div>
+        <br>
+        <h1 id="deschead"><u> {{ game.title }}</u></h1>
+        <p><i>Release Date:</i> {{ game.release_date }}</p>
+        <p><i>Genres:</i> {{ game.genres }}</p>
+        <p><i>Price:</i> ${{ game.price }}</p>
+        <p><i>Publisher:</i> {{ game.publisher }}</p>
+        <p><i>About:</i> {{ game.description }}</p>
+        <p><i>Average Rating:</i> {{ average_rating }} </p>
+        <p id="desc-btns"><form action="{{ url_for('wishlist_bp.toggle_wishlist') }}" method="post">
+            <input type="hidden" name="game_id" value="{{ game.game_id }}">
+            {% if game_in_wishlist %}
+                <button class="wishlist-btn" type="submit" name="action" value="remove">Remove from Wishlist</button>
+            {% else %}
+                <button class="wishlist-btn" type="submit" name="action" value="add">Add to Wishlist</button>
+            {% endif %}
+        </form>
+        {% if can_review %}
+            <button id="review-btn" onclick="location.href='{{ url_for('description_bp.review_game', game_id=game.game_id) }}'">Add a Review</button>
+        {% endif %}
+        </p>
+        {% if game.reviews and game.reviews|length > 0 and game.reviews[0] %}
+            <p><i>Reviews:</i></p>
+            {% for review in game.reviews %}
+                <p>{{review.comment}}, {{review.rating}}/5, by {{review.user.username}}</br></p>
+            {% endfor %}
+        {% else %}
+            <p><i>Reviews:</i> No reviews available for this game.</p>
+        {% endif %}
+    </div>
+  </main>
+</div>
+{% endblock %}

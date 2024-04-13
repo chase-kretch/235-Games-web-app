@@ -1,0 +1,36 @@
+{% extends "layout.html" %}
+{% block content %}
+<main id = "review">
+    <div>
+        <img src = {{game.url}} alt="game photo">
+
+        <h2>Review {{game.title}}</h2>
+        <div>
+            <form action="{{ url_for('description_bp.review_game', game_id=game.game_id) }}" method ="post">
+                {{form.game_id}}
+                {{form.csrf_token}}
+                <br>
+                <div id="review-form">{{form.review(size = 100, placeholder="Write your review here", class="textarea", cols="50", rows="6", wrap="hard")}}
+                    {% if form.review.errors %}
+                        <ul>
+                        {% for error in form.review.errors %}
+                            <li>{{error}}</li>
+                        {% endfor %}
+                        </ul>
+                    {% endif %}
+                </div>
+                <div></br>
+                        {{form.rating.label}}
+                        {{ form.rating(class="form-control") }}
+
+                </div></br>
+                <div id="review-submit">{{ form.submit }}</div>
+            </form>
+        </div>
+
+    </div>
+
+
+
+</main>
+{% endblock %}

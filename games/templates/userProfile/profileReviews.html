@@ -1,0 +1,26 @@
+{% extends "layout.html" %}
+
+{% block content %}
+<div id="profile">
+    <h1>Hello {{ username }}</h1>
+    <p>This page shows you all the reviews you have left! You can click the title to go to the decription page of the game you chose.</p>
+
+    {% if num_of_reviews > 0 %}
+        <p>It looks like you have {{ num_of_reviews }} reviews! Thank you for using our service!</p>
+        <br>
+        <br>
+        <hr class="long_line">
+        <h2>Your Reviews:</h2>
+        {% for review in reviews %}
+            <h4>Game Title: <a href="{{ url_for('description_bp.description', game_id=review.game.game_id) }}">{{ review.game.title }}</a></h4>
+            {% set emoji = "\U00002B50" %}
+            <p>Rating: {{ review.rating * emoji }}</p>
+            <p>Comment: {{ review.comment }}</p>
+            <hr>
+        {% endfor %}
+    {% else %}
+        <p>Unfortunately, it looks like you don't have any reviews yet! You can find the "Add a Review" button in the description page of any games!</p>
+    {% endif %}
+</div>
+
+{% endblock %}

@@ -1,0 +1,12 @@
+{% extends "layout.html" %}
+
+{% block content %}
+<div id="profile">
+    <div id="delete_page">
+        <h1>Are you sure you want to delete your account?</h1>
+        <h1>This action can not be reverted and all the information related to you will be deleted from our server permanently.</h1>
+        <button id="delete_button" onclick="location.href='{{ url_for('profile_bp.delete_account', confirm=True) }}'">Yes I want to delete my account</button>
+        <button class="btn-general" onclick="location.href='{{ url_for('profile_bp.profile') }}'">No I changed my mind I want to go back</button>
+    </div>
+</div>
+{% endblock %}

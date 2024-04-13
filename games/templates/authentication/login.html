@@ -1,0 +1,14 @@
+{% extends 'layout.html' %}
+
+{% block content %}
+<div id="authentication">
+    <main>
+        <h1 id="authenhead"><u>{{ title }}</u> </h1>
+        <form method="POST" action="{{ error_handler_url }}">
+            {{ form.csrf_token }}
+        <p><i>USERNAME:</i></p>
+        <p><i>PASSWORD:</i></p>
+        </form>
+    </main>
+</div>
+{% endblock %}

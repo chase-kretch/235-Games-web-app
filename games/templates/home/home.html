@@ -1,0 +1,78 @@
+{% extends "layout.html" %}
+{% block content %}
+    <content id="home">
+        <p>Welcome to our CS235 Game Library page!</p>
+        <p>Thank you so much for visiting our website! This website is made by cpho632, mcho480, wlaw777 for COMPSCI 235 Assignment.</p>
+        <p>Here, you can look up hundreds of games and detailed information about the games you like.</p>
+        <p>You can browse through all the games in our database by genres or by prices. </p>
+        <p>All of our games are displayed in alphabetical order, for improved user experience. </p>
+        <p>You can also search any games from our database by title or by publisher using the search bar at the top.</p>
+        <br>
+
+        <div class="category">
+            <h2>Free to Play</h2>
+            <div class="game-list">
+                {% for game in free_to_play_games %}
+                    <div class="game-item">
+                        <a href="{{ url_for('description_bp.description', game_id=game.game_id) }}"><img src="{{game.image_url}}" alt="{{game.title}} image"></a>
+                        <h3>{{ game.title }}</h3>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+
+        <div class="category">
+            <h2>Under $5</h2>
+            <div class="game-list">
+                {% for game in under_5_games %}
+                    <div class="game-item">
+                        <a href="{{ url_for('description_bp.description', game_id=game.game_id) }}"><img src="{{game.image_url}}" alt="{{game.title}} image"></a>
+                        <h3>{{ game.title }}</h3>
+                        <p>${{ game.price }}</p>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+
+        <div class="category">
+            <h2>$5-$10</h2>
+            <div class="game-list">
+                {% for game in between_5_and_10_games %}
+                    <div class="game-item">
+                        <a href="{{ url_for('description_bp.description', game_id=game.game_id) }}"><img src="{{game.image_url}}" alt="{{game.title}} image"></a>
+                        <h3>{{ game.title }}</h3>
+                        <p>${{ game.price }}</p>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+
+        <div class="category">
+            <h2>$10-$20</h2>
+            <div class="game-list">
+                {% for game in between_10_and_20_games %}
+                    <div class="game-item">
+                        <a href="{{ url_for('description_bp.description', game_id=game.game_id) }}"><img src="{{game.image_url}}" alt="{{game.title}} image"></a>
+                        <h3>{{ game.title }}</h3>
+                        <p>${{ game.price }}</p>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+
+        <div class="category">
+            <h2>$20 and above</h2>
+            <div class="game-list">
+                {% for game in above_20_games %}
+                    <div class="game-item">
+                        <a href="{{ url_for('description_bp.description', game_id=game.game_id) }}"><img src="{{game.image_url}}" alt="{{game.title}} image"></a>
+                        <h3>{{ game.title }}</h3>
+                        <p>${{ game.price }}</p>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+
+    </content>
+
+{% endblock %}

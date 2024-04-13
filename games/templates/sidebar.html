@@ -1,0 +1,20 @@
+<nav id="nav">
+    <img src="{{ url_for('static', filename='logo.png') }}" alt="logo" width="140">
+    <a href="{{ url_for('home_bp.home') }}">Home</a>
+    <a href="{{ url_for('games_bp.games') }}">Browse Games</a>
+
+    <h4>Your Profile</h4>
+    {% if session['username'] %}
+        <a href="{{ url_for('profile_bp.profile') }}">My Account</a>
+        <a href="{{ url_for('auth_bp.logout') }}">Logout</a>
+    {% else %}
+        <a href="{{ url_for('auth_bp.register') }}">Register</a>
+        <a href="{{ url_for('auth_bp.login') }}">Login</a>
+    {% endif %}
+
+    <h4>Browse Games by Genre:</h4>
+    {% for genre in unique_genres %}
+        <a href="{{ url_for('games_bp.genre_games', genre_name=genre) }}">{{ genre }}</a>
+    {% endfor %}
+  <p id="footer">cpho632 | mcho480 | wlaw777</p>
+</nav>

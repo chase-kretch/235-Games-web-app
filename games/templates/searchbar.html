@@ -1,0 +1,19 @@
+<search id="search">
+    <form action="{{ url_for('games_bp.search_games') }}" method="get">
+        <label for="query"></label>
+            <select name="criteria">
+                    <option value="all">All</option>
+                    <option value="title">Title</option>
+                    <option value="publisher">Publisher</option>
+            </select>
+            <select name="genre">
+                <option value="all">All Genres</option>
+                {% for genre in unique_genres %}
+                    <option value="{{ genre }}">{{ genre }}</option>
+                {% endfor %}
+            </select>
+        <input type="search" id="query" name="query" placeholder="Search...">
+        <button type="submit">Search</button>
+    </form>
+</search>
+
